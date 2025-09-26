@@ -52,6 +52,7 @@ Apply the Configuration.
 terraform apply --auto-approve
 ```
 ![Alt Text](images/ec2.png)
+
 View Outputs
 ```bash
 terraform output
@@ -62,9 +63,8 @@ Destroy the Infrastructure.
 ```bash
 terraform destroy --auto-approve
 ```
-<<<<<<< HEAD
+
 ## output
 
 ![Alt Text](images/nginx.png)
-=======
->>>>>>> 12d494fe55e075ea433cbdf02797151e9bbbf837
+
