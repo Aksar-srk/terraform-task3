@@ -1,7 +1,7 @@
-# Terraform Docker EC2 Project
+# Terraform Docker EC2 setup
 
 ## 📜 What We Did
-This project provides an automated and error-free Terraform setup to deploy an AWS EC2 instance.  
+This setup provides an automated and error-free Terraform setup to deploy an AWS EC2 instance.  
 The core of this project is the **`user_data`** script, a bash script that runs at instance launch.  
 It silently installs Docker and then executes a `docker run` command to start a specified container (e.g., **Nginx**).
 
@@ -62,6 +62,9 @@ Destroy the Infrastructure.
 ```bash
 terraform destroy --auto-approve
 ```
+<<<<<<< HEAD
 ## output
 
 ![Alt Text](images/nginx.png)
+=======
+>>>>>>> 12d494fe55e075ea433cbdf02797151e9bbbf837
