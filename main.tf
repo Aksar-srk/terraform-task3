@@ -26,7 +26,7 @@ data "aws_ami" "amazon_linux_2" {
 resource "aws_security_group" "allow_web" {
   name        = "allow_web"
   description = "Allow web and SSH inbound traffic"
-  vpc_id      = "vpc-xxxxxxxxxxxxxxxxx" # <<-- REPLACE with your VPC ID
+  vpc_id      = "vpc-003506f72559404e4" # <<-- REPLACE with your VPC ID
 
   ingress {
     description = "HTTP from anywhere"
@@ -60,8 +60,12 @@ resource "aws_security_group" "allow_web" {
 resource "aws_instance" "docker_host" {
   ami           = data.aws_ami.amazon_linux_2.id
   instance_type = var.instance_type
-  key_name      = "your-key-pair-name" # <<-- REPLACE with your key pair name
+  key_name      = "devops" # <<-- REPLACE with your key pair name
   vpc_security_group_ids = [aws_security_group.allow_web.id]
+  subnet_id     = "subnet-064a38f726cb62cae"
+
+  associate_public_ip_address = true
+
 
   # User data script to install Docker and run a container
   user_data = <<-EOT
